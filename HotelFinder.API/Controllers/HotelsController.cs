@@ -21,45 +21,61 @@ namespace HotelFinder.API.Controllers
         ///</summary>
         ///<returns></returns>
         [HttpGet]
-        public List<Hotel> Get()
+        public IActionResult Get()
         {
-            return _hotelService.GetAllHotels();
+            var hotels = _hotelService.GetAllHotels();
+            return Ok(hotels); //200 + data
         }
         ///<summary>
         ///Get Hotel By Id
         ///</summary>
         ///<returns></returns>
         [HttpGet("{id}")]
-        public Hotel Get(int id)
+        public IActionResult Get(int id)
         {
-            return _hotelService.GetHotelById(id);
+            var hotel = _hotelService.GetHotelById(id);
+            if (hotel != null)
+            {
+                return Ok(hotel);
+            }
+            return NotFound(); //404
         }
         ///<summary>
         ///Create an Hotel
         ///</summary>
         ///<returns></returns>
         [HttpPost]
-        public Hotel Post(Hotel hotel)
+        public IActionResult Post(Hotel hotel)
         {
-            return _hotelService.CreateHotel(hotel);
+            var createdHotel = _hotelService.CreateHotel(hotel);
+            return CreatedAtAction(nameof(Get), new { id = createdHotel.Id }, createdHotel);   //201 + data
         }
         ///<summary>
         ///Update an Hotel
         ///</summary>
         ///<returns></returns>
         [HttpPut]
-        public Hotel Put(Hotel hotel)
+        public IActionResult Put(Hotel hotel)
         {
-            return _hotelService.UpdateHotel(hotel);
+            if (_hotelService.GetHotelById(hotel.Id) != null)
+            {
+                return Ok(_hotelService.UpdateHotel(hotel)); //200 + data
+            }
+            return NotFound(); //404
         }
         ///<summary>
         ///Dalete the Hotel
         ///</summary>
         ///<returns></returns>
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
-            _hotelService.DeleteHotel(id);
+            if (_hotelService.GetHotelById(id) != null)
+            {
+                _hotelService.DeleteHotel(id);
+                return Ok(); //200
+            }
+            return NotFound(); //404
         }
     }
 }
