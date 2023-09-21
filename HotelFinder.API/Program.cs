@@ -1,9 +1,23 @@
+using HotelFinder.Business.Abstract;
+using HotelFinder.Business.Concrete;
+using HotelFinder.DataAccess.Abstract;
+using HotelFinder.DataAccess.Concrete;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSingleton<IHotelService, HotelManager>();
+builder.Services.AddSingleton<IHotelRepository, HotelRepository>();
 
 // Add services to the container.
 builder.Services.AddControllers();
 
 var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "All Hotels API");
+});
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

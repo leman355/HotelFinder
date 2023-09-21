@@ -46,3 +46,8 @@ C:\Users\user\source\repos\HotelFinder\HotelFinder.API\obj\Debug\net7.0\refint\H
 C:\Users\user\source\repos\HotelFinder\HotelFinder.API\obj\Debug\net7.0\HotelFinder.API.pdb
 C:\Users\user\source\repos\HotelFinder\HotelFinder.API\obj\Debug\net7.0\HotelFinder.API.genruntimeconfig.cache
 C:\Users\user\source\repos\HotelFinder\HotelFinder.API\obj\Debug\net7.0\ref\HotelFinder.API.dll
+C:\Users\user\source\repos\HotelFinder\HotelFinder.API\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\user\source\repos\HotelFinder\HotelFinder.API\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\user\source\repos\HotelFinder\HotelFinder.API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\user\source\repos\HotelFinder\HotelFinder.API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\user\source\repos\HotelFinder\HotelFinder.API\obj\Debug\net7.0\HotelFinder.API.MvcApplicationPartsAssemblyInfo.cs
