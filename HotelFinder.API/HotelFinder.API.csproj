@@ -14,7 +14,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\HotelFinder.Business\HotelFinder.Business.csproj" />
-		<ProjectReference Include="..\HotelFinder.Entities\HotelFinder.Entities.csproj" />
+		<ProjectReference Include="..\HotelFinder.DataAccess\HotelFinder.DataAccess.csproj" />
 	</ItemGroup>
 	
 </Project>
