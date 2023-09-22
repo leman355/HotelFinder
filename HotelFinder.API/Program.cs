@@ -11,6 +11,11 @@ builder.Services.AddSingleton<IHotelRepository, HotelRepository>();
 // Add services to the container.
 builder.Services.AddControllers();
 
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "All Hotels API", Version = "v1" });
+});
+
 var app = builder.Build();
 
 app.UseSwagger();
